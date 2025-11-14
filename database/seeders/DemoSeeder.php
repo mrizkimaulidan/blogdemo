@@ -19,6 +19,9 @@ class DemoSeeder extends Seeder
             'email' => 'demo@example.com',
             'password' => Hash::make('password'),
         ]);
-        Post::factory()->count(5)->for($user)->create();
+
+        Post::factory()->count(10)
+            ->hasTags(5)
+            ->for($user)->create();
     }
 }
